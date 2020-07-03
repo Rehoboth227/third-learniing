@@ -23,4 +23,11 @@ function ask(question, yes, no, mul, div, err) {
      }
    else {err()}
  }
- ask("Enter an operator ?", (a, b) => {alert( a + b );},  (a, b) => {alert( a - b );},  (a, b) => {alert( a * b );}, (a, b) => {alert( a / b );},() => { alert('try again later') });
+ ask("Enter an operator ?",
+  (a, b) => {alert( a + b );}, 
+   (a, b) => {alert( a - b );}, 
+    (a, b) => {alert( a * b );},
+     (a, b) => {alert( a / b );},
+     () => { alert('try again later') });
+
+     let mis = 54;
