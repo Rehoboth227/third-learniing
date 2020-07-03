@@ -1,28 +1,30 @@
 function ask(question, yes, no, mul, div, err) {
     let ops = prompt(question);
- 
-     
-     console.log(ops);
-   if ( ops=== '+' ) {
-       let num1 = +prompt('Enter the number1')
-       let num2 = +prompt('Enter the number2')
-       yes(num1, num2);
-     }
-   else if(ops === '-') {
-       let num1 = +prompt('Enter the number1')
-       let num2 = +prompt('Enter the number2')
-       no(num1, num2);
-     }else if(ops === '*') {
-       let num1 = +prompt('Enter the number1')
-       let num2 = +prompt('Enter the number2')
-       mul(num1, num2);
-     }else if(ops === '/') {
-       let num1 = +prompt('Enter the number1')
-       let num2 = +prompt('Enter the number2')
-       div(num1, num2);
-     }
-   else {err()}
- }
+    if (ops === '+' || ops === '-' || ops ==='*' || ops ==='/'){
+      console.log(ops);
+    } else {
+      return("try again later");
+    }
+    let num1 = +prompt('Enter the number1');
+    let num2 = +prompt('Enter the number2');
+     switch (ops){
+       case '+':
+        yes(num1, num2);
+        break;
+      case '-':
+        no(num1, num2);
+        break;
+      case '*':
+        mul(num1, num2);
+        break;
+      case '/':
+        div(num1, num2);
+        break;
+
+      default:
+        err();
+     }   
+    }     
  ask("Enter an operator ?",
   (a, b) => {alert( a + b );}, 
    (a, b) => {alert( a - b );}, 
@@ -30,4 +32,3 @@ function ask(question, yes, no, mul, div, err) {
      (a, b) => {alert( a / b );},
      () => { alert('try again later') });
 
-     let mis = 54;
